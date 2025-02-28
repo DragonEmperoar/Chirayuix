@@ -1,0 +1,247 @@
+/* Container for all blog cards */
+.blog__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+  gap: 19px;
+  padding: 19px;
+}
+
+.previews-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.previews-popup-content {
+  width: 70%;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  text-align: center;
+}
+
+.previews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.preview-img {
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.preview-img:hover {
+  transform: scale(1.1);
+}
+
+/* ✅ PDF Pop-Up */
+.pdf-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.pdf-popup-content {
+  width: 80%;
+  height: 90%;
+  background: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #333;
+}
+
+.pdf-viewer {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .blog__container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .blog__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pdf-popup-content {
+    width: 90%;
+    height: 80%;
+  }
+
+  .previews-popup-content {
+    width: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  .blog__container {
+    grid-template-columns: 1fr;
+  }
+
+  .pdf-popup-content {
+    width: 95%;
+    height: 75%;
+  }
+
+  .previews-popup-content {
+    width: 90%;
+  }
+}
+
+/* Individual blog card */
+.blog__card {
+  background: #545557;
+  padding: 13px;
+  border-radius: 9.5px;
+  box-shadow: 0 3px 6px rgba(243, 241, 241, 0.1);
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer; /* Makes it clickable */
+  margin: auto; /* Centering if needed */
+}
+
+.blog__card:hover {
+  transform: translateY(-4px);
+}
+
+/* Blog image */
+.blog__img {
+  width: 100%;
+  height: auto;
+  border-radius: 9.5px;
+  object-fit: cover;
+}
+
+/* Blog details */
+.blog__details {
+  margin-top: 9.5px;
+}
+
+/* Blog title */
+.blog__title {
+  font-size: 15.5px;
+  color: #d6cccc;
+  font-weight: bold;
+  margin-bottom: 5.5px;
+}
+
+/* Blog metadata (date & author) */
+.blog__meta {
+  font-size: 13.5px;
+  color: #d6cccc;
+  display: flex;
+  align-items: center;
+  gap: 5.5px;
+}
+
+/* Dot separator between date and author */
+.blog__dot {
+  font-size: 15.5px;
+  color: #dcdfe6;
+}
+
+/* PDF Pop-Up */
+.pdf-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.pdf-popup-content {
+  width: 80%;
+  height: 90%;
+  background: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #333;
+}
+
+.pdf-viewer {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .blog__container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .blog__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pdf-popup-content {
+    width: 90%;
+    height: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  .blog__container {
+    grid-template-columns: 1fr;
+  }
+
+  .pdf-popup-content {
+    width: 95%;
+    height: 75%;
+  }
+}

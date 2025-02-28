@@ -1,0 +1,99 @@
+.services__container {
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 1.875rem;
+  row-gap: 1.0rem;
+}
+
+.services__card {
+  text-align: center;
+  padding: 1.875rem;
+  border-radius: var(--border-radius);
+  background-color: var(--container-color);
+  transition: all 0.3s ease-in-out;
+}
+
+.services__card:hover {
+  transform: translateY(-10px);
+}
+
+.services__card:nth-child(1) {
+  background-color: rgba(255, 255, 255, 0.133);
+  border-radius: 149px;
+  box-shadow: 0 5px 20px 0 rgb(108, 108, 229 / 50%);
+}
+
+.services__card:nth-child(2) {
+  background-color: rgba(255, 255, 255, 0.133);
+  border-radius: 149px;
+  box-shadow: 0 5px 20px 0 rgb(249, 215, 76 / 50%);
+}
+
+.services__card:nth-child(3) {
+  background-color: rgba(255, 255, 255, 0.133);
+  border-radius: 149px;
+  box-shadow: 0 5px 20px 0 rgb(249, 123, 139 / 50%);
+}
+.services__card:nth-child(4) {
+  background-color: rgba(255, 255, 255, 0.133);
+  border-radius: 149px;
+  box-shadow: 0 5px 20px 0 rgb(249, 123, 139 / 50%);
+}
+.services__card:nth-child(5) {
+  background-color: rgba(255, 255, 255, 0.133);
+  border-radius: 149px;
+  box-shadow: 0 5px 20px 0 rgb(249, 123, 139 / 50%);
+}
+.services__card:nth-child(6) {
+  background-color: rgba(255, 255, 255, 0.133);
+  border-radius: 149px;
+  box-shadow: 0 5px 20px 0 rgb(249, 123, 139 / 50%);
+}
+
+
+.services__img {
+  margin-bottom: 1.25rem;
+}
+
+.services__title {
+  font-size: var(--h3-font-size);
+  margin-bottom: 1rem;
+  color: #fff; /* Changed to white */
+}
+
+.services__description {
+  color: #fff; /* Changed to white */
+}
+
+/* Removed specific color overrides for nth-child(2) */
+.services__card:nth-child(2) .services__title {
+  color: #fff; /* Now white */
+}
+
+.services__card:nth-child(2) .services__description {
+  color: #fff; /* Now white */
+}
+
+/* Removed dark theme overrides as they are no longer needed */
+
+
+@media screen and (max-width: 1024px) {
+  .services__container {
+    grid-template-columns: repeat(2, 330px);
+    justify-content: center;
+    row-gap: 1.875rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .services__container {
+    grid-template-columns: 310px;
+    justify-content: center;
+    row-gap: 1.875rem;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .services__container {
+    grid-template-columns: 1fr;
+  }
+}
