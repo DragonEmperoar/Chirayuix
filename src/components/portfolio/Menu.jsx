@@ -25,7 +25,6 @@ import Image24 from '../../assets/3D Buiseness Card.webp';
 
 
 
-
 const Menu = [
     { id: 1,
          title: "Noise Redesign", 
