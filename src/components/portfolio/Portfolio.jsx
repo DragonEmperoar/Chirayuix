@@ -18,8 +18,10 @@ const Portfolio = () => {
     };
 
     const openFile = (file, type) => {
-        setSelectedFile(file);
-        setSelectedFileType(type);
+        if (file) {
+            setSelectedFile(file);
+            setSelectedFileType(type);
+        }
     };
 
     return (
@@ -52,9 +54,9 @@ const Portfolio = () => {
                         className="portfolio__card"
                         key={id}
                         onClick={() => {
-                            const file = pdf || mp4;  // ✅ Ensures it picks the correct file
+                            const file = pdf || mp4;
                             const type = pdf ? "pdf" : mp4 ? "mp4" : null;
-                        
+
                             if (file && type) {
                                 openFile(file, type);
                             }
@@ -77,12 +79,21 @@ const Portfolio = () => {
                         <span className="close-btn" onClick={() => setSelectedFile(null)}>&times;</span>
 
                         {/* Render Based on File Type */}
-                        {selectedFileType === "pdf" && <iframe src={selectedFile} title="PDF Viewer" className="pdf-viewer"></iframe>}
+                        {selectedFileType === "pdf" && (
+                            selectedFile.includes("drive.google.com") ? (
+                                <a href={selectedFile} target="_blank" rel="noopener noreferrer" className="google-drive-link">Open PDF</a>
+                            ) : (
+                                <iframe 
+                                    src={`https://docs.google.com/gview?url=${encodeURIComponent(selectedFile)}&embedded=true`} 
+                                    title="PDF Viewer"
+                                    className="pdf-viewer"
+                                ></iframe>
+                            )
+                        )}
                         {selectedFile.endsWith(".mp4") && (
-                <video controls autoPlay>
-                    <source src={selectedFile} type="video/mp4" />
-                </video>
-
+                            <video controls autoPlay>
+                                <source src={selectedFile} type="video/mp4" />
+                            </video>
                         )}
                     </div>
                 </div>
