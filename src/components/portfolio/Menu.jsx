@@ -83,7 +83,7 @@ const Menu = [
     { id: 10,
          title: "Awaara",
           category: ["UI/UX"],
-           pdf: "/assets/awaara.pdf",
+           pdf: "https://dl.dropboxusercontent.com/scl/fi/geawr6hsrr4uuv2hg41bo/awaara.pdf?rlkey=zk177iak3lis075t6gxf5othq&st=ms0btp65&dl=0",
             thumbnail: Image20 },
 
     { id: 11,
