@@ -47,7 +47,7 @@ const Menu = [
     { id: 4,
          title: "Business Card Mockup",
           category: ["Graphic"],
-           pdf: "https://dl.dropboxusercontent.com/scl/fi/ogd7se3281x0xf3sr634p/Business.pdf?rlkey=okjfcn77g4ag675rjdgqksz35&st=zbxm8xuf&dl=0",
+           pdf: "https://dl.dropboxusercontent.com/scl/fi/lqha6x0krqbtl61hllm8s/Business_compressed.pdf?rlkey=05zyo8j0bdp7hqek0jlkc3gfl&st=41cnxafw&dl=0",
             thumbnail: Image14 },
 
     { id: 5,
@@ -71,7 +71,7 @@ const Menu = [
     { id: 8,
          title: "SoonLust",
           category: ["UI/UX"],
-           pdf: "https://dl.dropboxusercontent.com/scl/fi/ez4x7z072ku3h99l8ja3q/soonlust.pdf?rlkey=q7onyq90ts4kb6ewz6ukwwm7b&st=hs47xvcn&dl=0",
+           pdf: "https://dl.dropboxusercontent.com/scl/fi/6rjqje83dk82un6h3pwsa/soonlust.pdf?rlkey=019lr9nduw59wmqkfkm6uk6dl&st=69nj6hi9&dl=0",
             thumbnail: Image18 },
 
     { id: 9,
@@ -89,7 +89,7 @@ const Menu = [
     { id: 11,
          title: "Dron-Acharya",
           category: ["UI/UX"],
-           pdf: "https://dl.dropboxusercontent.com/scl/fi/5bl11z225wgw5e2gvc27r/Dron-Acharya.pdf?rlkey=waay1iego5hjwbm3jaif4nkqp&st=3mlnbfxf&raw=1",
+           pdf: "https://dl.dropboxusercontent.com/scl/fi/r55mnzyder154am6hsnqq/Dron.pdf?rlkey=rt2stz9szttwy5nlqda6kqwyo&st=au596evi&dl=0",
             thumbnail: Image21
     },
 
