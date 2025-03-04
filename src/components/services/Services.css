@@ -16,66 +16,48 @@
   transform: translateY(-10px);
 }
 
-.services__card:nth-child(1) {
-  background-color: rgba(255, 255, 255, 0.133);
-  border-radius: 149px;
-  box-shadow: 0 5px 20px 0 rgb(108, 108, 229 / 50%);
-}
-
-.services__card:nth-child(2) {
-  background-color: rgba(255, 255, 255, 0.133);
-  border-radius: 149px;
-  box-shadow: 0 5px 20px 0 rgb(249, 215, 76 / 50%);
-}
-
-.services__card:nth-child(3) {
-  background-color: rgba(255, 255, 255, 0.133);
-  border-radius: 149px;
-  box-shadow: 0 5px 20px 0 rgb(249, 123, 139 / 50%);
-}
-.services__card:nth-child(4) {
-  background-color: rgba(255, 255, 255, 0.133);
-  border-radius: 149px;
-  box-shadow: 0 5px 20px 0 rgb(249, 123, 139 / 50%);
-}
-.services__card:nth-child(5) {
-  background-color: rgba(255, 255, 255, 0.133);
-  border-radius: 149px;
-  box-shadow: 0 5px 20px 0 rgb(249, 123, 139 / 50%);
-}
+/* ✅ Default Dark Mode Styles */
+.services__card:nth-child(1),
+.services__card:nth-child(2),
+.services__card:nth-child(3),
+.services__card:nth-child(4),
+.services__card:nth-child(5),
 .services__card:nth-child(6) {
   background-color: rgba(255, 255, 255, 0.133);
-  border-radius: 149px;
-  box-shadow: 0 5px 20px 0 rgb(249, 123, 139 / 50%);
+  border-radius: 149px;
+  box-shadow: 0 1px 2px 0 rgba(104, 96, 97, 0.5);
 }
 
+/* ✅ Light Mode Styles */
+[data-theme="light"] .services__card {
+  background-color: #ffffff !important; /* White box */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1) !important; /* Softer shadow */
+}
 
+/* ✅ Change text to dark in light mode */
+[data-theme="light"] .services__title,
+[data-theme="light"] .services__description {
+  color: #333 !important; /* Darker text for better contrast */
+}
+
+/* ✅ Services Images */
 .services__img {
   margin-bottom: 1.25rem;
 }
 
+/* ✅ Services Title */
 .services__title {
   font-size: var(--h3-font-size);
   margin-bottom: 1rem;
-  color: #fff; /* Changed to white */
+  color: #fff; /* Default: white for dark mode */
 }
 
+/* ✅ Services Description */
 .services__description {
-  color: #fff; /* Changed to white */
+  color: #fff; /* Default: white for dark mode */
 }
 
-/* Removed specific color overrides for nth-child(2) */
-.services__card:nth-child(2) .services__title {
-  color: #fff; /* Now white */
-}
-
-.services__card:nth-child(2) .services__description {
-  color: #fff; /* Now white */
-}
-
-/* Removed dark theme overrides as they are no longer needed */
-
-
+/* ✅ Responsive Design */
 @media screen and (max-width: 1024px) {
   .services__container {
     grid-template-columns: repeat(2, 330px);
