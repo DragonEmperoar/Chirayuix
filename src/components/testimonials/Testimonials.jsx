@@ -17,7 +17,7 @@ const Testimonials = () => {
 			image: Image4,
 			title: "Mrs. Ashwani Bhudke",
 			subtitle: "Design Head @ Adore Global",
-			comment: "Greg worked at Entrostat as a full-stack developer. He was excellent and had a real eye for design. If there was ever a time where we had a complicated frontend or needed to know what the best CSS approach was for something - Greg was our goto man!",
+			comment: "Very talnted in graphic design field and very professional, good person and very talented"
 		},
 		{
 			id: 2,
@@ -29,7 +29,7 @@ const Testimonials = () => {
 		{
 			id: 3,
 			image: Image3,
-			title: "Mr. Byts",
+			title: "Mr. Sidhharth",
 			subtitle: "Team Lead @ EazyByts Infotech",
 			comment: "I enjoy working with the theme and learn so much. You guys make the process fun and interesting. Good luck! 👍",
 		},
