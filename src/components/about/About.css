@@ -16,10 +16,10 @@
 
 .about__img {
   width: 100%;
-  max-width: 350px; 
-  border-radius: 20px; 
+  max-width: 350px;
+  border-radius: 20px;
   object-fit: cover;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease-in-out;
 }
 
@@ -125,6 +125,12 @@
   font-size: 1.875rem;
 }
 
+/* Change color of icons to #090085 in light mode */
+[data-theme="light"] .about__icon {
+  color: #090085;
+}
+
+/* Responsive Adjustments */
 @media screen and (max-width: 1024px) {
   .about__container {
     grid-template-columns: 720px;
