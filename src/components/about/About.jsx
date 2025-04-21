@@ -21,7 +21,7 @@ const About = () => {
                     <div className="about__info">
                         <p className="about__description">
                         Hi, I am Chirayu a passionate UI/UX designer with a strong foundation in frontend and backend development, allowing me to create seamless and functional digital experiences. With expertise in graphic design, brand identity, digital marketing, video editing, and 3D modeling, I bring a multidisciplinary approach to every project.
-Currently pursuing a Bachelor of Design (B.Des) in UI/UX at the World University of Design, I have gained hands-on experience through multiple internships and projects, refining my skills in user research, interaction design, and full-stack development. My work is driven by creativity, psychology, and emerging technologies like AR/VR to craft intuitive and engaging digital solutions.<br /><br />
+Currently pursuing a Bachelor of Design (B.Des) in UI/UX, I have gained hands-on experience through multiple internships and projects, refining my skills in user research, interaction design, and full-stack development. My work is driven by creativity, psychology, and emerging technologies like AR/VR to craft intuitive and engaging digital solutions.<br /><br />
                             Here are a few technologies I’ve been working with recently:
                         </p>
                         <ul className="about__list">
