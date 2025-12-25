@@ -12,6 +12,32 @@
   margin-bottom: 0.5rem;
 }
 
+/* =========================
+   EMAIL / LINK COLOR FIX
+   ========================= */
+
+/* Dark mode – email white */
+[data-theme="dark"] .contact__info a {
+  color: #ffffff;
+}
+
+/* Light mode – email dark */
+[data-theme="light"] .contact__info a {
+  color: #090085;
+}
+
+/* Common link styling */
+.contact__info a {
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact__info a:hover {
+  text-decoration: underline;
+}
+
+/* ========================= */
+
 .contact__form-group {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -47,6 +73,10 @@
 .contact__form-area textarea {
   resize: none;
 }
+
+/* =========================
+   RESPONSIVE
+   ========================= */
 
 @media screen and (max-width: 1024px) {
   .contact__container {
