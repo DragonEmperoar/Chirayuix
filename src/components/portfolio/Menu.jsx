@@ -12,8 +12,10 @@ import Image21 from '../../assets/guru.webp';
 import Image22 from '../../assets/Media1.gif';
 import Image23 from '../../assets/1st Try Reel.webp';
 import Image24 from '../../assets/3D Buiseness Card.webp';
-
-
+import Image25 from '../../assets/mens health.webp';
+import Image26 from '../../assets/sujan.webp';
+import Image27 from '../../assets/Where Is Suhani Poster.webp';
+import Image28 from '../../assets/google+.webp';
 
 
 
@@ -110,6 +112,30 @@ const Menu = [
           category: ["3D Modelling"],
            mp4: "https://dl.dropboxusercontent.com/scl/fi/bk2ko8k7uhx9h0oyfdefa/last-11.mp4?rlkey=zzhqxeubyogwyvjjwf0nce37q&st=m1e1clco&dl=0",
             thumbnail: Image24 },
+    
+    { id: 15,
+         title: "GigaMale - Men's Health App",
+          category: ["UI/UX"],
+           pdf: "https://dl.dropboxusercontent.com/scl/fi/44ncs3vys6bly4gla1v1j/menhealth.pdf?rlkey=i4xd7sxejakfkxebtfeqnntpd&st=y1zffded&dl=0",
+            thumbnail: Image25 },
+
+    { id: 16,
+         title: "Sujan Serai Reimagined",
+          category: ["UI/UX"],
+           pdf: "https://dl.dropboxusercontent.com/scl/fi/vgq4a9rleqxz3xnlqedv4/Sujan.pdf?rlkey=7x2594mn2dil8uqoklgc98715&st=sl0u2zcm&dl=0",
+            thumbnail: Image26 },
+
+    { id: 17,
+         title: "Where Is Suhani",
+          category: ["Video Editing"],
+           youtube: "https://youtu.be/WA0pO8XlrcU",
+            thumbnail: Image27 },
+
+    { id: 18,
+         title: "Google+",
+          category: ["UI/UX"],
+           pdf: "https://dl.dropboxusercontent.com/scl/fi/rl1t513s4uruauooes4sd/Work-in-progress.pdf?rlkey=ra7e8rci0ktsbydcuan5q9pf0&st=d1ihukub&dl=0",
+            thumbnail: Image28 },
 ];
 
 export default Menu;
