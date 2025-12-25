@@ -1,163 +1,123 @@
-/* ================= DESKTOP SIDEBAR (UNCHANGED) ================= */
-.aside {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 110px;
-  height: 100vh;
-  background-color: var(--body-color);
-  border-right: 1px solid var(--border-color);
-  padding: 2.5rem 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  z-index: 10;
-}
+import React, { useEffect, useState } from "react";
+import "./Sidebar.css";
+import Logo from "../../assets/Intro.jpg";
 
-/* AVATAR */
-.nav__logo {
-  margin-bottom: 2.5rem;
-}
+import {
+  RiHome2Line,
+  RiUser3Line,
+  RiFileList3Line,
+  RiBriefcase2Line,
+  RiStackLine,
+  RiFilePaper2Line,
+  RiChat3Line,
+  RiMoonLine,
+  RiSunLine,
+} from "react-icons/ri";
 
-.nav__logo img {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  object-fit: cover;
-}
+const navItems = [
+  { id: "home", icon: <RiHome2Line /> },
+  { id: "about", icon: <RiUser3Line /> },
+  { id: "services", icon: <RiFileList3Line /> },
+  { id: "resume", icon: <RiBriefcase2Line /> },
+  { id: "portfolio", icon: <RiStackLine /> },
+  { id: "research", icon: <RiFilePaper2Line /> },
+  { id: "blog", icon: <RiFileList3Line /> },
+  { id: "contact", icon: <RiChat3Line /> },
+];
 
-/* NAV */
-.nav {
-  flex: 1;
-  display: flex;
-  align-items: center;
-}
+const Sidebar = ({ theme, switchTheme }) => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [progress, setProgress] = useState(0);
 
-.nav__menu {
-  position: relative;
-  display: flex;
-  justify-content: center;
-}
+  useEffect(() => {
+    const sections = navItems
+      .map(item => document.getElementById(item.id))
+      .filter(Boolean);
 
-/* ICON STACK */
-.nav__list {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 440px;
-  z-index: 2;
-}
+    if (!sections.length) return;
 
-.nav__item {
-  display: flex;
-  justify-content: center;
-}
+    const firstTop = sections[0].offsetTop;
+    const lastBottom =
+      sections[sections.length - 1].offsetTop +
+      sections[sections.length - 1].offsetHeight;
 
-.nav__link {
-  font-size: 1.45rem;
-  color: var(--title-color);
-  transition: transform 0.3s ease, color 0.3s ease;
-}
+    const START_OFFSET = 120;
 
-.nav__link:hover {
-  transform: scale(1.15);
-}
+    const handleScroll = () => {
+      const scrollY = window.scrollY + START_OFFSET;
 
-.active-link {
-  color: #4da3ff;
-}
+      sections.forEach((section, index) => {
+        const top = section.offsetTop;
+        const bottom = top + section.offsetHeight;
+        if (scrollY >= top && scrollY < bottom) {
+          setActiveIndex(index);
+        }
+      });
 
-/* PROGRESS BAR */
-.sidebar-track {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 36px;
-  height: 440px;
-  background: rgba(160, 200, 255, 0.12);
-  border-radius: 24px;
-  overflow: hidden;
-  z-index: 1;
-}
+      const clampedScroll = Math.min(
+        Math.max(scrollY, firstTop),
+        lastBottom
+      );
 
-.sidebar-progress {
-  position: absolute;
-  top: 2px;
-  width: 100%;
-  background: linear-gradient(
-    to bottom,
-    rgba(160, 210, 255, 0.18),
-    rgba(100, 170, 255, 0.45)
+      const percent =
+        (clampedScroll - firstTop) / (lastBottom - firstTop);
+
+      setProgress(percent);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+    <aside className="aside">
+      {/* Avatar (desktop only via CSS) */}
+      <a href="#home" className="nav__logo">
+        <img src={Logo} alt="avatar" />
+      </a>
+
+      <nav className="nav">
+        <div className="nav__menu">
+          {/* Progress bar (desktop only via CSS) */}
+          <div className="sidebar-track">
+            <div
+              className="sidebar-progress"
+              style={{ height: `${progress * 100}%` }}
+            />
+          </div>
+
+          {/* Icons */}
+          <ul className="nav__list">
+            {navItems.map((item, index) => (
+              <li key={item.id} className="nav__item">
+                <a
+                  href={`#${item.id}`}
+                  className={`nav__link ${
+                    activeIndex === index ? "active-link" : ""
+                  }`}
+                >
+                  {item.icon}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </nav>
+
+      {/* Theme Switch */}
+      <div className="nav__footer">
+        <button
+          onClick={switchTheme}
+          className="nav__link footer__button"
+          aria-label="Toggle theme"
+        >
+          {theme === "light" ? <RiMoonLine /> : <RiSunLine />}
+        </button>
+      </div>
+    </aside>
   );
-  border-radius: 24px;
-  transition: height 0.35s ease-out;
-}
+};
 
-/* FOOTER */
-.nav__footer {
-  margin-top: auto;
-}
-
-.footer__button {
-  background: transparent;
-  border: none;
-  font-size: 1.4rem;
-  cursor: pointer;
-  color: var(--title-color);
-}
-
-/* ================= MOBILE VERSION (NEW) ================= */
-@media (max-width: 768px) {
-  .aside {
-    top: auto;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 70px;
-    flex-direction: row;
-    justify-content: center;
-    padding: 0;
-    border-right: none;
-    border-top: 1px solid var(--border-color);
-    background: var(--body-color);
-  }
-
-  /* Hide avatar on mobile */
-  .nav__logo {
-    display: none;
-  }
-
-  .nav {
-    width: 100%;
-    height: 100%;
-  }
-
-  .nav__menu {
-    width: 100%;
-    height: 100%;
-  }
-
-  /* Remove progress bar on mobile */
-  .sidebar-track {
-    display: none;
-  }
-
-  .nav__list {
-    flex-direction: row;
-    width: 100%;
-    height: 100%;
-    justify-content: space-around;
-    align-items: center;
-  }
-
-  .nav__link {
-    font-size: 1.35rem;
-  }
-
-  .nav__footer {
-    position: absolute;
-    right: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-}
+export default Sidebar;
