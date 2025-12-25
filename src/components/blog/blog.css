@@ -1,34 +1,24 @@
-/* ✅ Default (Dark Mode) */
+/* ===============================
+   BLOG GRID – CONTROLLED LAYOUT
+================================ */
+.blog__container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* ✅ FULL ROW UTILISATION */
+  gap: 22px;
+  padding: 20px;
+}
+
+/* ===============================
+   BLOG CARD – DARK MODE
+================================ */
 [data-theme="dark"] .blog__card {
   background: #545557;
   color: #d6cccc;
-  padding: 13px;
-  border-radius: 9.5px;
-  box-shadow: 0 3px 6px rgba(243, 241, 241, 0.1);
-  transition: transform 0.3s ease-in-out;
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(243, 241, 241, 0.12);
+  transition: transform 0.3s ease;
   cursor: pointer;
-  margin: auto;
-}
-
-/* ✅ Light Mode */
-[data-theme="light"] .blog__card-container {
-  background: #ffffff; /* White container */
-  padding: 13px;
-  border-radius: 9.5px;
-  box-shadow: 0 3px 6px rgba(243, 241, 241, 0.1); /* Same shadow as dark mode */
-  margin: auto;
-}
-
-[data-theme="light"] .blog__card {
-  background: transparent; /* Make the background transparent so only the container has the background */
-  color: #ffffff;
-  padding: 0; /* Remove padding from blog__card since container already has padding */
-}
-
-/* ✅ Update Text Colors */
-[data-theme="light"] .blog__title,
-[data-theme="light"] .blog__meta {
-  color: #333;
 }
 
 [data-theme="dark"] .blog__title,
@@ -36,22 +26,63 @@
   color: #d6cccc;
 }
 
-/* ✅ BLOG CONTAINER */
-.blog__container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
-  gap: 19px;
-  padding: 19px;
+/* ===============================
+   BLOG CARD – LIGHT MODE
+================================ */
+[data-theme="light"] .blog__card {
+  background: #ffffff;
+  color: #222;
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
-/* ✅ PREVIEW POP-UP */
+[data-theme="light"] .blog__title {
+  color: #090085;
+}
+
+[data-theme="light"] .blog__meta {
+  color: #444;
+}
+
+/* ===============================
+   HOVER
+================================ */
+.blog__card:hover {
+  transform: translateY(-6px);
+}
+
+/* ===============================
+   IMAGE
+================================ */
+.blog__img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-bottom: 0.6rem;
+}
+
+/* ===============================
+   TEXT
+================================ */
+.blog__title {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.blog__meta {
+  font-size: 0.85rem;
+}
+
+/* ===============================
+   PREVIEW POPUP
+================================ */
 .previews-popup {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -60,14 +91,16 @@
 
 .previews-popup-content {
   width: 70%;
-  max-width: 700px; /* ✅ Ensure it's not too wide */
+  max-width: 700px;
   background: #fff;
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 12px;
   position: relative;
-  text-align: center;
 }
 
+/* ===============================
+   PREVIEW GRID
+================================ */
 .previews-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -79,21 +112,20 @@
   width: 100%;
   border-radius: 8px;
   cursor: pointer;
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.25s ease;
 }
 
 .preview-img:hover {
-  transform: scale(1.1);
+  transform: scale(1.06);
 }
 
-/* ✅ PDF POP-UP */
+/* ===============================
+   PDF POPUP
+================================ */
 .pdf-popup {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -102,38 +134,37 @@
 
 .pdf-popup-content {
   width: 80%;
-  max-width: 850px; /* ✅ Set max width */
-  height: 90%;
-  max-height: 90vh; /* ✅ Prevent overflowing */
+  max-width: 850px;
+  height: 90vh;
   background: #fff;
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 12px;
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.close-btn {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 24px;
-  font-weight: bold;
-  cursor: pointer;
-  color: #333;
 }
 
 .pdf-viewer {
   width: 100%;
   height: 100%;
-  max-width: 100%; /* ✅ Prevent overflow */
-  max-height: 100%;
   border: none;
 }
 
-/* ✅ RESPONSIVE ADJUSTMENTS */
-@media (max-width: 1024px) {
+/* ===============================
+   CLOSE BUTTON
+================================ */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #333;
+}
+
+/* ===============================
+   RESPONSIVE BREAKPOINTS
+================================ */
+@media (max-width: 1200px) {
   .blog__container {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -146,11 +177,7 @@
 
   .pdf-popup-content {
     width: 90%;
-    height: 80%;
-  }
-
-  .previews-popup-content {
-    width: 80%;
+    height: 80vh;
   }
 }
 
@@ -161,48 +188,6 @@
 
   .pdf-popup-content {
     width: 95%;
-    height: 75%;
+    height: 75vh;
   }
-
-  .previews-popup-content {
-    width: 90%;
-  }
-}
-
-/* ✅ INDIVIDUAL BLOG CARDS */
-.blog__card:hover {
-  transform: translateY(-4px);
-}
-
-.blog__img {
-  width: 100%;
-  height: auto;
-  border-radius: 9.5px;
-  object-fit: cover;
-}
-
-.blog__details {
-  margin-top: 9.5px;
-}
-
-/* ✅ Dark Mode Specific Styles */
-[data-theme="dark"] .blog__title {
-  color: #d6cccc;
-}
-
-[data-theme="dark"] .blog__meta {
-  color: #d6cccc;
-}
-
-[data-theme="dark"] .blog__dot {
-  color: #dcdfe6;
-}
-
-/* ✅ Light Mode Specific Styles */
-[data-theme="light"] .blog__title {
-  color: #090085 !important; /* Dark text for light mode */
-}
-
-[data-theme="light"] .blog__meta {
-  color: #ffffff !important; /* Softer text */
 }
