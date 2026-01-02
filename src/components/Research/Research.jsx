@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ReactDOM from "react-dom";
 import "./research.css";
 
 /* Images */
@@ -35,7 +36,7 @@ const Research = () => {
     <section className="research section container" id="research">
       <h2 className="section__title">Research Papers</h2>
 
-      {/* Research Cards */}
+      {/* Cards */}
       <div className="research__container grid">
         {researchPosts.map((post) => (
           <div
@@ -54,27 +55,29 @@ const Research = () => {
         ))}
       </div>
 
-      {/* PDF MODAL — SAME PATTERN AS PORTFOLIO */}
-      {selectedFile && (
-        <div className="research-pdf-popup">
-          <div className="research-pdf-content">
-            <span
-              className="research-close-btn"
-              onClick={() => setSelectedFile(null)}
-            >
-              &times;
-            </span>
+      {/* ✅ PORTAL POPUP (IMPORTANT FIX) */}
+      {selectedFile &&
+        ReactDOM.createPortal(
+          <div className="research-pdf-popup">
+            <div className="research-pdf-content">
+              <span
+                className="research-close-btn"
+                onClick={() => setSelectedFile(null)}
+              >
+                &times;
+              </span>
 
-            <iframe
-              className="research-pdf-viewer"
-              title="Research PDF"
-              src={`https://docs.google.com/gview?url=${encodeURIComponent(
-                selectedFile
-              )}&embedded=true`}
-            />
-          </div>
-        </div>
-      )}
+              <iframe
+                className="research-pdf-viewer"
+                title="Research PDF"
+                src={`https://docs.google.com/gview?url=${encodeURIComponent(
+                  selectedFile
+                )}&embedded=true`}
+              />
+            </div>
+          </div>,
+          document.body
+        )}
     </section>
   );
 };
