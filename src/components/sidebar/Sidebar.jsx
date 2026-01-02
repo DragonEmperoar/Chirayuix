@@ -1,92 +1,123 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Sidebar.css";
-import Logo from "../../assets/Avatarr.svg";
-import LightLogo from "../../assets/Avatarr.svg";
+import Logo from "../../assets/Intro.jpg";
 
 import {
-    RiHome2Line,
-    RiUser3Line,
-    RiBriefcase2Line,
-    RiStackLine,
-    RiDraftLine,
-    RiChat3Line,
-    RiFileList3Line,
-    RiMoonLine,
-    RiSunLine,
-    RiMenu2Line,
+  RiHome2Line,
+  RiUser3Line,
+  RiFileList3Line,
+  RiBriefcase2Line,
+  RiStackLine,
+  RiFilePaper2Line,
+  RiChat3Line,
+  RiMoonLine,
+  RiSunLine,
 } from "react-icons/ri";
 
+const navItems = [
+  { id: "home", icon: <RiHome2Line /> },
+  { id: "about", icon: <RiUser3Line /> },
+  { id: "services", icon: <RiFileList3Line /> },
+  { id: "resume", icon: <RiBriefcase2Line /> },
+  { id: "portfolio", icon: <RiStackLine /> },
+  { id: "research", icon: <RiFilePaper2Line /> },
+  { id: "blog", icon: <RiFileList3Line /> },
+  { id: "contact", icon: <RiChat3Line /> },
+];
 
-const Sidebar = (props) => {
-    const [toggle, showMenu] = useState(false);
+const Sidebar = ({ theme, switchTheme }) => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [progress, setProgress] = useState(0);
 
-    return (
-        <>
-            <aside className={toggle ? 'aside show-menu' : 'aside'}>
-                <a href="#home" className="nav__logo">
-                    <img src={props.theme === 'light' ? LightLogo : Logo} alt="logo" />
+  useEffect(() => {
+    const sections = navItems
+      .map(item => document.getElementById(item.id))
+      .filter(Boolean);
+
+    if (!sections.length) return;
+
+    const firstTop = sections[0].offsetTop;
+    const lastBottom =
+      sections[sections.length - 1].offsetTop +
+      sections[sections.length - 1].offsetHeight;
+
+    const START_OFFSET = 120;
+
+    const handleScroll = () => {
+      const scrollY = window.scrollY + START_OFFSET;
+
+      sections.forEach((section, index) => {
+        const top = section.offsetTop;
+        const bottom = top + section.offsetHeight;
+        if (scrollY >= top && scrollY < bottom) {
+          setActiveIndex(index);
+        }
+      });
+
+      const clampedScroll = Math.min(
+        Math.max(scrollY, firstTop),
+        lastBottom
+      );
+
+      const percent =
+        (clampedScroll - firstTop) / (lastBottom - firstTop);
+
+      setProgress(percent);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+    <aside className="aside">
+      {/* Avatar (desktop only via CSS) */}
+      <a href="#home" className="nav__logo">
+        <img src={Logo} alt="avatar" />
+      </a>
+
+      <nav className="nav">
+        <div className="nav__menu">
+          {/* Progress bar (desktop only via CSS) */}
+          <div className="sidebar-track">
+            <div
+              className="sidebar-progress"
+              style={{ height: `${progress * 100}%` }}
+            />
+          </div>
+
+          {/* Icons */}
+          <ul className="nav__list">
+            {navItems.map((item, index) => (
+              <li key={item.id} className="nav__item">
+                <a
+                  href={`#${item.id}`}
+                  className={`nav__link ${
+                    activeIndex === index ? "active-link" : ""
+                  }`}
+                >
+                  {item.icon}
                 </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </nav>
 
-                <nav className="nav">
-                    <div className="nav__menu">
-                        <ul className="nav__list">
-                            <li className="nav__item">
-                                <a href="#home" className="nav__link">
-                                    <RiHome2Line />
-                                </a>
-                            </li>
-
-                            <li className="nav__item">
-                                <a href="#about" className="nav__link">
-                                    <RiUser3Line />
-                                </a>
-                            </li>
-
-                            <li className="nav__item">
-                                <a href="#services" className="nav__link">
-                                    <RiFileList3Line />
-                                </a>
-                            </li>
-
-                            <li className="nav__item">
-                                <a href="#resume" className="nav__link">
-                                    <RiBriefcase2Line />
-                                </a>
-                            </li>
-
-                            <li className="nav__item">
-                                <a href="#portfolio" className="nav__link">
-                                    <RiStackLine />
-                                </a>
-                            </li>
-
-                            <li className="nav__item">
-                                <a href="#blog" className="nav__link">
-                                    <RiDraftLine />
-                                </a>
-                            </li>
-
-                            <li className="nav__item">
-                                <a href="#contact" className="nav__link">
-                                    <RiChat3Line />
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-
-                <div className="nav__footer">
-                    <button onClick={() => { props.switchTheme(); showMenu(!toggle) }} className="nav__link footer__button">
-                        {props.theme === 'light' ? <RiMoonLine /> : <RiSunLine />}
-                    </button>
-                </div>
-            </aside>
-
-            <div className={toggle ? 'nav__toggle nav__toggle-open' : 'nav__toggle'} onClick={() => showMenu(!toggle)}>
-                <RiMenu2Line />
-            </div>
-        </>
-    );
+      {/* Theme Switch */}
+      <div className="nav__footer">
+        <button
+          onClick={switchTheme}
+          className="nav__link footer__button"
+          aria-label="Toggle theme"
+        >
+          {theme === "light" ? <RiMoonLine /> : <RiSunLine />}
+        </button>
+      </div>
+    </aside>
+  );
 };
 
 export default Sidebar;
