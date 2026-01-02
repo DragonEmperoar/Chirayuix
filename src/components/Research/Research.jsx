@@ -28,21 +28,24 @@ const researchPosts = [
   },
 ];
 
-/* Component */
 const Research = () => {
   const [selectedFile, setSelectedFile] = useState(null);
+
+  const openPDF = (pdf) => {
+    setSelectedFile(pdf);
+  };
 
   return (
     <section className="research section container" id="research">
       <h2 className="section__title">Research Papers</h2>
 
-      {/* Research Cards */}
+      {/* Cards */}
       <div className="research__container grid">
         {researchPosts.map((post) => (
           <div
             key={post.id}
             className="research__card"
-            onClick={() => setSelectedFile(post.pdf)}
+            onClick={() => openPDF(post.pdf)}
           >
             <img
               src={post.image}
@@ -55,7 +58,7 @@ const Research = () => {
         ))}
       </div>
 
-      {/* PDF Viewer Popup */}
+      {/* PDF POPUP — EXACT SAME PATTERN AS PORTFOLIO */}
       {selectedFile && (
         <div className="research-pdf-popup">
           <div className="research-pdf-content">
@@ -67,7 +70,6 @@ const Research = () => {
             </span>
 
             <iframe
-              loading="lazy"
               className="research-pdf-viewer"
               title="Research PDF"
               src={`https://docs.google.com/gview?url=${encodeURIComponent(
