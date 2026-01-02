@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ReactDOM from "react-dom";
+import { createPortal } from "react-dom";
 import "./research.css";
 
 /* Images */
@@ -36,7 +36,7 @@ const Research = () => {
     <section className="research section container" id="research">
       <h2 className="section__title">Research Papers</h2>
 
-      {/* Cards */}
+      {/* Research Cards */}
       <div className="research__container grid">
         {researchPosts.map((post) => (
           <div
@@ -55,9 +55,9 @@ const Research = () => {
         ))}
       </div>
 
-      {/* ✅ PORTAL POPUP (IMPORTANT FIX) */}
+      {/* PDF POPUP — PORTAL */}
       {selectedFile &&
-        ReactDOM.createPortal(
+        createPortal(
           <div className="research-pdf-popup">
             <div className="research-pdf-content">
               <span
