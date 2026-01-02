@@ -31,21 +31,17 @@ const researchPosts = [
 const Research = () => {
   const [selectedFile, setSelectedFile] = useState(null);
 
-  const openPDF = (pdf) => {
-    setSelectedFile(pdf);
-  };
-
   return (
     <section className="research section container" id="research">
       <h2 className="section__title">Research Papers</h2>
 
-      {/* Cards */}
+      {/* Research Cards */}
       <div className="research__container grid">
         {researchPosts.map((post) => (
           <div
             key={post.id}
             className="research__card"
-            onClick={() => openPDF(post.pdf)}
+            onClick={() => setSelectedFile(post.pdf)}
           >
             <img
               src={post.image}
@@ -58,7 +54,7 @@ const Research = () => {
         ))}
       </div>
 
-      {/* PDF POPUP — EXACT SAME PATTERN AS PORTFOLIO */}
+      {/* PDF MODAL — SAME PATTERN AS PORTFOLIO */}
       {selectedFile && (
         <div className="research-pdf-popup">
           <div className="research-pdf-content">
