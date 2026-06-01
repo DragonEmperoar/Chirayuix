@@ -35,7 +35,7 @@ const Menu = [
          pdf: "https://dl.dropboxusercontent.com/scl/fi/2fjk493a2q9f7sbr0mhyu/Noise-Final-render.pdf?rlkey=hj252hnhsk39s8m3zslgdri7z&st=aj9ob9xv&dl=0", 
          thumbnail: Image11 },
 
-    { id: 2,
+    { id: ,
          title: "Cantina",
           category: ["Brand Identity & Marketing"],
            pdf: "https://dl.dropboxusercontent.com/scl/fi/69hddmdinfmuam2v4kyih/cantina-final.pdf?rlkey=asxkusj8dyrc0hvcyxkvh52yq&e=1&st=jyi8g7kp&dl=0",
@@ -52,7 +52,7 @@ const Menu = [
            pdf: "https://dl.dropboxusercontent.com/scl/fi/lqha6x0krqbtl61hllm8s/Business_compressed.pdf?rlkey=05zyo8j0bdp7hqek0jlkc3gfl&st=41cnxafw&dl=0",
             thumbnail: Image14 },
 
-    { id: 5,
+    { id: ,
          title: "Snapdeal",
           category: ["UI/UX"],
            pdf: "https://dl.dropboxusercontent.com/scl/fi/ooitat746lsjfqfro9qg6/snapdeal-final.pdf?rlkey=opqdwpjr25k20pezxy1acezbl&st=j94phnrf&dl=0",
@@ -64,7 +64,7 @@ const Menu = [
            pdf: "https://dl.dropboxusercontent.com/scl/fi/fhwj4czpefvqbgs72klec/g6643.pdf?rlkey=6zepoq7fepd6q08t0pvcyt40t&st=zwtf1pns&dl=0",
             thumbnail: Image16 },
 
-    { id: 7,
+    { id: ,
          title: "HDFC Bank",
           category: ["UI/UX"],
            pdf: "https://dl.dropboxusercontent.com/scl/fi/xx29n0ph4h0cbx0075f2i/hdfc.pdf?rlkey=wotslbtsx6whr632tplcsuj60&st=fsw4tk8k&dl=0",
@@ -95,7 +95,7 @@ const Menu = [
             thumbnail: Image21
     },
 
-    { id: 12,
+    { id: ,
          title: "1st Try Reel",
           category: ["Video Editing"],
            mp4: "https://dl.dropboxusercontent.com/scl/fi/satwu43h44tnwjcnl2i6x/1-reel.mp4?rlkey=hqmp8rpzyqnn68lfi6aem3a5o&st=rsjp3ryw&dl=0",
