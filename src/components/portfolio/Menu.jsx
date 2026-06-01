@@ -35,11 +35,6 @@ const Menu = [
          pdf: "https://dl.dropboxusercontent.com/scl/fi/2fjk493a2q9f7sbr0mhyu/Noise-Final-render.pdf?rlkey=hj252hnhsk39s8m3zslgdri7z&st=aj9ob9xv&dl=0", 
          thumbnail: Image11 },
 
-    { id: ,
-         title: "Cantina",
-          category: ["Brand Identity & Marketing"],
-           pdf: "https://dl.dropboxusercontent.com/scl/fi/69hddmdinfmuam2v4kyih/cantina-final.pdf?rlkey=asxkusj8dyrc0hvcyxkvh52yq&e=1&st=jyi8g7kp&dl=0",
-            thumbnail: Image12 },
     { id: 3,
          title: "Holy Mole",
           category: ["Brand Identity & Marketing"],
@@ -52,23 +47,11 @@ const Menu = [
            pdf: "https://dl.dropboxusercontent.com/scl/fi/lqha6x0krqbtl61hllm8s/Business_compressed.pdf?rlkey=05zyo8j0bdp7hqek0jlkc3gfl&st=41cnxafw&dl=0",
             thumbnail: Image14 },
 
-    { id: ,
-         title: "Snapdeal",
-          category: ["UI/UX"],
-           pdf: "https://dl.dropboxusercontent.com/scl/fi/ooitat746lsjfqfro9qg6/snapdeal-final.pdf?rlkey=opqdwpjr25k20pezxy1acezbl&st=j94phnrf&dl=0",
-            thumbnail: Image15 },
-
-    { id: 6,
+  { id: 6,
          title: "Illustration",
           category: ["Graphic"],
            pdf: "https://dl.dropboxusercontent.com/scl/fi/fhwj4czpefvqbgs72klec/g6643.pdf?rlkey=6zepoq7fepd6q08t0pvcyt40t&st=zwtf1pns&dl=0",
             thumbnail: Image16 },
-
-    { id: ,
-         title: "HDFC Bank",
-          category: ["UI/UX"],
-           pdf: "https://dl.dropboxusercontent.com/scl/fi/xx29n0ph4h0cbx0075f2i/hdfc.pdf?rlkey=wotslbtsx6whr632tplcsuj60&st=fsw4tk8k&dl=0",
-            thumbnail: Image17 },
 
     { id: 8,
          title: "SoonLust",
@@ -92,14 +75,7 @@ const Menu = [
          title: "Dron-Acharya",
           category: ["UI/UX"],
            pdf: "https://dl.dropboxusercontent.com/scl/fi/r55mnzyder154am6hsnqq/Dron.pdf?rlkey=rt2stz9szttwy5nlqda6kqwyo&st=au596evi&dl=0",
-            thumbnail: Image21
-    },
-
-    { id: ,
-         title: "1st Try Reel",
-          category: ["Video Editing"],
-           mp4: "https://dl.dropboxusercontent.com/scl/fi/satwu43h44tnwjcnl2i6x/1-reel.mp4?rlkey=hqmp8rpzyqnn68lfi6aem3a5o&st=rsjp3ryw&dl=0",
-            thumbnail: Image23 },
+            thumbnail: Image21 },
 
     { id: 13,
          title: "Chill Out Architecture",
