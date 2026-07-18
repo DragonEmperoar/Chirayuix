@@ -41,6 +41,34 @@ const WorkExperience = [
             "I am the placement coordinator of the UI/UX department at WUD, where I reach out to companies and build connections to gain more industry knowledge.",
         ],
     },
+    {
+        id: 5,
+        title: "User Experience Designer Intern",
+        company: "LNA INFRAPROJECTS PVT. LTD",
+        yearsActive: "June 2025 - August 2025",
+        information: [
+            "Through my work, the organization benefited from a more refined and cohesive digital experience, with better usability standards and improved interface clarity. This helped strengthen their online presence and ensured that their platforms were aligned with modern UI/UX practices.",
+        ],
+    },
+    {
+        id: 6,
+        title: "User Interface Designer Intern",
+        company: "Maharishi Arvind Institute of Science & Managment",
+        yearsActive: "December 2025 - January 2026",
+        information: [
+            " I worked closely with different departments to understand their requirements and translate them into effective digital solutions, ensuring the website aligned with the institution’s branding and communication goals. My presence added value by streamlining the website’s usability, making it more intuitive for users such as students and faculty, and strengthening the institute’s digital identity. The improvements I implemented helped create a more professional and cohesive online experience, supporting better engagement and accessibility.",
+        ],
+    },
+    
+    {
+        id: 7,
+        title: "UI/UX Deigner Intern",
+        company: "KPMG",
+        yearsActive: "May 2026 - August 2026",
+        information: [
+            "I worked closely with different departments to understand their requirements and translate them into effective digital solutions, ensuring the website aligned with the institution’s branding and communication goals. My presence added value by streamlining the website’s usability, making it more intuitive for users such as students and faculty, and strengthening the institute’s digital identity. The improvements I implemented helped create a more professional and cohesive online experience, supporting better engagement and accessibility.",
+        ],
+    },
 ];
 
 // Education Data
